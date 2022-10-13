@@ -1,7 +1,7 @@
 package grammar
 
 import (
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/speech"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/speech"
 )
 
 // #include <speechapi_c_common.h>

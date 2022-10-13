@@ -4,13 +4,14 @@
 package speech
 
 import (
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/common"
+	"unsafe"
+
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/common"
 )
 
 // #include <stdlib.h>
 // #include <speechapi_c_keyword_recognition_model.h>
 import "C"
-import "unsafe"
 
 // KeywordRecognitionModel represents the keyword recognition model used with StartKeywordRecognitionAsync methods.
 type KeywordRecognitionModel struct {

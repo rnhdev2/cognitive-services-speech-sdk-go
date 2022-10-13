@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/audio"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/dialog"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/samples/helpers"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/speech"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/audio"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/dialog"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/samples/helpers"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/speech"
 )
 
 func ListenOnce(subscription string, region string, file string) {

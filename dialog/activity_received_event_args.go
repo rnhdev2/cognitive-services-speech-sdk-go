@@ -4,15 +4,16 @@
 package dialog
 
 import (
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/audio"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/common"
+	"unsafe"
+
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/audio"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/common"
 )
 
 // #include <stdlib.h>
 // #include <stdint.h>
 // #include <speechapi_c_dialog_service_connector.h>
 import "C"
-import "unsafe"
 
 type ActivityReceivedEventArgs struct {
 	handle   C.SPXHANDLE

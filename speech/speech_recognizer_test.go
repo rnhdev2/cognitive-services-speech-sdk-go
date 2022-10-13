@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/audio"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/audio"
 )
 
 func createSpeechRecognizerFromSubscriptionRegionAndAudioConfig(t *testing.T, subscription string, region string, audioConfig *audio.AudioConfig) *SpeechRecognizer {

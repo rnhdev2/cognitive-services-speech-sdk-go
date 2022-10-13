@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/audio"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/speech"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/audio"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/speech"
 )
 
 func sessionStartedHandler(event speech.SessionEventArgs) {
