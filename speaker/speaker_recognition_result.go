@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"unsafe"
 
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/common"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/common"
 )
 
 // #include <stdlib.h>
@@ -48,7 +48,7 @@ func (result SpeakerRecognitionResult) Close() {
 }
 
 // NewSpeakerRecognitionResultFromHandle creates a SpeakerRecognitionResult from a handle (for internal use)
-func NewSpeakerRecognitionResultFromHandle (handle common.SPXHandle) (*SpeakerRecognitionResult, error) {
+func NewSpeakerRecognitionResultFromHandle(handle common.SPXHandle) (*SpeakerRecognitionResult, error) {
 	result := new(SpeakerRecognitionResult)
 	result.handle = uintptr2handle(handle)
 	buffer := C.malloc(C.sizeof_char * 1024)
@@ -77,7 +77,7 @@ func NewSpeakerRecognitionResultFromHandle (handle common.SPXHandle) (*SpeakerRe
 
 	/* ProfileID */
 	result.ProfileID = result.Properties.GetPropertyByString("speakerrecognition.profileid", "")
-	
+
 	/* Score */
 	value := result.Properties.GetPropertyByString("speakerrecognition.score", "0.0")
 	if value != "" {
@@ -85,7 +85,7 @@ func NewSpeakerRecognitionResultFromHandle (handle common.SPXHandle) (*SpeakerRe
 			result.Score = floatVal
 		}
 	}
-	
+
 	return result, nil
 }
 

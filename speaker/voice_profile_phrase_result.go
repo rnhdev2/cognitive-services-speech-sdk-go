@@ -7,7 +7,7 @@ import (
 	"strings"
 	"unsafe"
 
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/common"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/common"
 )
 
 // #include <stdlib.h>
@@ -22,7 +22,7 @@ import "C"
 type VoiceProfilePhraseResult struct {
 	handle C.SPXHANDLE
 
-	// Activation phrases for voice profile enrollment 
+	// Activation phrases for voice profile enrollment
 	Phrases []string
 
 	// ResultID specifies the result identifier.
@@ -45,7 +45,7 @@ func (result VoiceProfilePhraseResult) Close() {
 }
 
 // newVoiceProfilePhraseResultFromHandle creates a VoiceProfilePhraseResult from a handle (for internal use)
-func newVoiceProfilePhraseResultFromHandle (handle common.SPXHandle) (*VoiceProfilePhraseResult, error) {
+func newVoiceProfilePhraseResultFromHandle(handle common.SPXHandle) (*VoiceProfilePhraseResult, error) {
 	result := new(VoiceProfilePhraseResult)
 	result.handle = uintptr2handle(handle)
 	buffer := C.malloc(C.sizeof_char * 1024)

@@ -4,10 +4,9 @@
 package speaker
 
 import (
-
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/audio"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/common"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/speech"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/audio"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/common"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/speech"
 )
 
 // #include <stdlib.h>
@@ -18,8 +17,8 @@ import "C"
 
 // SpeakerRecognizer is the class for speaker recognizers.
 type SpeakerRecognizer struct {
-	Properties                 *common.PropertyCollection
-	handle                     C.SPXHANDLE
+	Properties *common.PropertyCollection
+	handle     C.SPXHANDLE
 }
 
 func newSpeakerRecognizerFromHandle(handle C.SPXHANDLE) (*SpeakerRecognizer, error) {

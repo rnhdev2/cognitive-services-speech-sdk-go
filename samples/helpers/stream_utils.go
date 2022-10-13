@@ -9,7 +9,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/audio"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/audio"
 )
 
 func PumpFileIntoStream(filename string, stream *audio.PushAudioInputStream) {

@@ -5,10 +5,10 @@ package speaker
 
 import (
 	"math/big"
-	"unsafe"
 	"strconv"
+	"unsafe"
 
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/common"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/common"
 )
 
 // #include <stdlib.h>
@@ -64,7 +64,7 @@ func (result VoiceProfileEnrollmentResult) Close() {
 }
 
 // newVoiceProfileEnrollmentResultFromHandle creates a VoiceProfileEnrollmentResult from a handle (for internal use)
-func newVoiceProfileEnrollmentResultFromHandle (handle common.SPXHandle) (*VoiceProfileEnrollmentResult, error) {
+func newVoiceProfileEnrollmentResultFromHandle(handle common.SPXHandle) (*VoiceProfileEnrollmentResult, error) {
 	result := new(VoiceProfileEnrollmentResult)
 	result.handle = uintptr2handle(handle)
 	buffer := C.malloc(C.sizeof_char * 1024)
@@ -93,7 +93,7 @@ func newVoiceProfileEnrollmentResultFromHandle (handle common.SPXHandle) (*Voice
 
 	/* ProfileID */
 	result.ProfileID = result.Properties.GetPropertyByString("enrollment.profileId", "")
-	
+
 	/* EnrollmentsCount */
 	value := result.Properties.GetPropertyByString("enrollment.enrollmentsCount", "")
 	if value != "" {
@@ -101,7 +101,7 @@ func newVoiceProfileEnrollmentResultFromHandle (handle common.SPXHandle) (*Voice
 			result.EnrollmentsCount = intVal
 		}
 	}
-	
+
 	/* RemainingEnrollmentsCount */
 	value = result.Properties.GetPropertyByString("enrollment.remainingEnrollmentsCount", "")
 	if value != "" {
@@ -118,7 +118,7 @@ func newVoiceProfileEnrollmentResultFromHandle (handle common.SPXHandle) (*Voice
 			result.EnrollmentsLength = *bigIntVal
 		}
 	}
-	
+
 	/* RemainingEnrollmentsLength */
 	value = result.Properties.GetPropertyByString("enrollment.remainingEnrollmentsLengthInSec", "")
 	if value != "" {

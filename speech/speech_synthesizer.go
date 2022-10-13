@@ -6,8 +6,8 @@ package speech
 import (
 	"unsafe"
 
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/audio"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/common"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/audio"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/common"
 )
 
 // #include <stdlib.h>

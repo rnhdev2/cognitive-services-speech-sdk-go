@@ -6,7 +6,7 @@ package speaker
 import (
 	"unsafe"
 
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/common"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/common"
 )
 
 // #include <stdlib.h>
@@ -41,7 +41,7 @@ func (result VoiceProfileResult) Close() {
 }
 
 // newVoiceProfileResultFromHandle creates a VoiceProfileResult from a handle (for internal use)
-func newVoiceProfileResultFromHandle (handle common.SPXHandle) (*VoiceProfileResult, error) {
+func newVoiceProfileResultFromHandle(handle common.SPXHandle) (*VoiceProfileResult, error) {
 	result := new(VoiceProfileResult)
 	result.handle = uintptr2handle(handle)
 	buffer := C.malloc(C.sizeof_char * 1024)

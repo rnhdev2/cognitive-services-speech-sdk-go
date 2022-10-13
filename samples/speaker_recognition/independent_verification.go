@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/audio"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/speaker"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/common"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/speech"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/audio"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/common"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/speaker"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/speech"
 )
 
 func IndependentVerification(subscription string, region string, file string) {
@@ -34,7 +34,7 @@ func IndependentVerification(subscription string, region string, file string) {
 	defer audioConfig.Close()
 	<-time.After(10 * time.Second)
 	expectedType := common.VoiceProfileType(3)
-	
+
 	profile := GetNewVoiceProfileFromClient(client, expectedType)
 	if profile == nil {
 		fmt.Println("Error creating profile")

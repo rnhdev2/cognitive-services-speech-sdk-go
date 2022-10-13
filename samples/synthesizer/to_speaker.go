@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/audio"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/common"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/speech"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/audio"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/common"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/speech"
 )
 
 func synthesizeStartedHandler(event speech.SpeechSynthesisEventArgs) {

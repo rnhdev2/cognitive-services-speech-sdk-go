@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/speech"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/speech"
 )
 
 func SynthesisToAudioDataStream(subscription string, region string, file string) {

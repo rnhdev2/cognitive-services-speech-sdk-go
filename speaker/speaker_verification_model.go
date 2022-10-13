@@ -4,8 +4,7 @@
 package speaker
 
 import (
-
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/common"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/common"
 )
 
 // #include <stdlib.h>
@@ -14,7 +13,7 @@ import "C"
 
 // SpeakerVerificationModel is the class that defines a verification model to be used in speaker verification scenarios.
 type SpeakerVerificationModel struct {
-	handle     C.SPXHANDLE
+	handle C.SPXHANDLE
 }
 
 // newSpeakerVerificationModelFromHandle creates a SpeakerVerificationModel instance from a valid handle. This is for internal use only.
@@ -32,7 +31,7 @@ func NewSpeakerVerificationModelFromProfile(profile *VoiceProfile) (*SpeakerVeri
 	if ret != C.SPX_NOERROR {
 		return nil, common.NewCarbonError(ret)
 	}
-	
+
 	return newSpeakerVerificationModelFromHandle(handle2uintptr(handle))
 }
 

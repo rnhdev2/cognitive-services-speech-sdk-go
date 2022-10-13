@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/audio"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/common"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/speaker"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/speech"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/audio"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/common"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/speaker"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/speech"
 )
 
 func GetNewVoiceProfileFromClient(client *speaker.VoiceProfileClient, expectedType common.VoiceProfileType) *speaker.VoiceProfile {
@@ -26,7 +26,7 @@ func GetNewVoiceProfileFromClient(client *speaker.VoiceProfileClient, expectedTy
 		fmt.Println("Unexpected error creating profile id: ", err)
 		return nil
 	}
-	profileType, err := profile.Type();
+	profileType, err := profile.Type()
 	if err != nil {
 		fmt.Println("Unexpected error getting profile type: ", err)
 		return nil
@@ -95,7 +95,7 @@ func IndependentIdentification(subscription string, region string, file string) 
 	defer audioConfig.Close()
 	<-time.After(10 * time.Second)
 	expectedType := common.VoiceProfileType(1)
-	
+
 	profile := GetNewVoiceProfileFromClient(client, expectedType)
 	if profile == nil {
 		fmt.Println("Error creating profile")

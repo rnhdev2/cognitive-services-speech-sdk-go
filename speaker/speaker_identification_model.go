@@ -4,8 +4,7 @@
 package speaker
 
 import (
-
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/common"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/common"
 )
 
 // #include <stdlib.h>
@@ -14,7 +13,7 @@ import "C"
 
 // SpeakerIdentificationModel is the class that defines a identification model to be used in speaker identification scenarios.
 type SpeakerIdentificationModel struct {
-	handle     C.SPXHANDLE
+	handle C.SPXHANDLE
 }
 
 // newSpeakerIdentificationModelFromHandle creates a SpeakerIdentificationModel instance from a valid handle. This is for internal use only.
@@ -40,7 +39,7 @@ func NewSpeakerIdentificationModelFromProfiles(profiles []*VoiceProfile) (*Speak
 			return nil, common.NewCarbonError(ret)
 		}
 	}
-	
+
 	return newSpeakerIdentificationModelFromHandle(handle2uintptr(handle))
 }
 

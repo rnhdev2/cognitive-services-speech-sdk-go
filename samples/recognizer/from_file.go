@@ -5,12 +5,12 @@ package recognizer
 
 import (
 	"fmt"
+	"strings"
 	"time"
-    "strings"
 
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/audio"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/speech"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/samples/helpers"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/audio"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/samples/helpers"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/speech"
 )
 
 func RecognizeOnceFromWavFile(subscription string, region string, file string) {

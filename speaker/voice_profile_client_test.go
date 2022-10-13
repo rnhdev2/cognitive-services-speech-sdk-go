@@ -8,9 +8,10 @@ import (
 	"math/big"
 	"os"
 	"testing"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/audio"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/common"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/speech"
+
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/audio"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/common"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/speech"
 )
 
 func createClientFromSubscriptionRegion(t *testing.T, subscription string, region string) *VoiceProfileClient {
@@ -82,7 +83,7 @@ func GetNewVoiceProfileFromClient(t *testing.T, client *VoiceProfileClient, expe
 		t.Error("Unexpected error creating profile id: ", err)
 		return nil
 	}
-	profileType, err := profile.Type();
+	profileType, err := profile.Type()
 	if err != nil {
 		t.Error("Unexpected error getting profile type: ", err)
 		return nil
@@ -146,7 +147,7 @@ func TestVoiceProfileClientIdentification(t *testing.T) {
 	}
 	defer client.Close()
 	expectedType := common.VoiceProfileType(1)
-	
+
 	profile := GetNewVoiceProfileFromClient(t, client, expectedType)
 	if profile == nil {
 		t.Error("Error creating profile")
@@ -164,7 +165,7 @@ func TestVoiceProfileClientIdentification(t *testing.T) {
 	if result.Reason != common.ResetVoiceProfile {
 		t.Error("Unexpected result resetting profile: ", result)
 	}
-    
+
 	EnrollProfile(t, client, profile, "../test_files/TalkForAFewSeconds16.wav")
 
 	/* Test identification */
@@ -206,7 +207,7 @@ func TestVoiceProfileClientIndependentVerification(t *testing.T) {
 	}
 	defer client.Close()
 	expectedType := common.VoiceProfileType(3)
-	
+
 	profile := GetNewVoiceProfileFromClient(t, client, expectedType)
 	if profile == nil {
 		t.Error("Error creating profile")
@@ -271,7 +272,7 @@ func TestVoiceProfileClientDependentVerification(t *testing.T) {
 	}
 	defer client.Close()
 	expectedType := common.VoiceProfileType(2)
-	
+
 	profile := GetNewVoiceProfileFromClient(t, client, expectedType)
 	if profile == nil {
 		t.Error("Error creating profile")
@@ -343,7 +344,7 @@ func TestGetAllProfiles(t *testing.T) {
 	}
 	defer client.Close()
 	expectedType := common.VoiceProfileType(2)
-	
+
 	profile := GetNewVoiceProfileFromClient(t, client, expectedType)
 	if profile == nil {
 		t.Error("Error creating profile")
@@ -368,7 +369,7 @@ func TestGetAllProfiles(t *testing.T) {
 	for _, p := range profiles {
 		id, _ := p.Id()
 		t.Log("Profile id in list: ", id)
-		
+
 		if id == expectedID {
 			profileFound = true
 		} else {

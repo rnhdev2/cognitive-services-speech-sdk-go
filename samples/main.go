@@ -8,10 +8,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/samples/dialog_service_connector"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/samples/recognizer"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/samples/synthesizer"
-	"github.com/Microsoft/cognitive-services-speech-sdk-go/samples/speaker_recognition"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/samples/dialog_service_connector"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/samples/recognizer"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/samples/speaker_recognition"
+	"github.com/rnhdev2/cognitive-services-speech-sdk-go/samples/synthesizer"
 )
 
 type functionMap = map[string]func(string, string, string)
