@@ -6,7 +6,7 @@ package audio
 import (
 	"unsafe"
 
-	"github.com/rnhdev2/cognitive-services-speech-sdk-go/common"
+	"github.com/rnhdev2/t/cognitive-services-speech-sdk-go/common"
 )
 
 // #include <stdlib.h>
